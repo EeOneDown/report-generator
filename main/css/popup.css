@@ -13,7 +13,7 @@ body {
     grid-gap: 5px;
     grid-template-areas:
             "header header header"
-            "inputs inputs inputs"
+            "inputs inputs preferences"
             "outputs outputs outputs";
 }
 
@@ -29,6 +29,13 @@ h1 {
     grid-column-end: 3;
 }
 
+#preferences {
+    grid-area: preferences;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    font-size: 14px;
+}
+
 .preferences-icon {
     width: 25px;
     height: 25px;
@@ -36,22 +43,13 @@ h1 {
     right: 25px;
     top: 18px;
     filter: invert(1);
+    -webkit-transition: -webkit-transform .8s ease;
+    transition: transform .8s ease;
 }
 
 .preferences-icon:hover {
-    animation-name: preferencesIconHover;
-    animation-duration: 5s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-}
-
-@keyframes preferencesIconHover {
-    0%     {transform:rotate(0deg);}
-    20.0%  {transform:rotate(90deg);}
-    50.0%  {transform:rotate(180deg);}
-    70.0%  {transform:rotate(270deg);}
-    100.0%  {transform:rotate(360deg);}
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 #inputs {
