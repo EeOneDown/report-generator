@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // *** preferences ***
   const preferencesIcon = document.getElementById('preferences-icon')
   const preferences = document.getElementById('preferences')
-  preferencesIcon.addEventListener('click', () => onPreferencesClick(body, preferences))
+  preferencesIcon.addEventListener('click', onPreferencesClick)
   // *** output ***
   const outputs = document.getElementById('outputs');
   const output = document.getElementById('output');
@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => copy.innerHTML = 'Copy to Clipboard', 2000);
   }
 
-  function onPreferencesClick(body, preferences) {
-    body.style['grid-auto-columns'] = preferences.hidden ? '10% 65% 25%' : '15% 70% 15%';
+  function onPreferencesClick() {
+    body.style.gridTemplateRows = preferences.hidden ? '25% 20% 55%' : '20% 20% 60%';
     preferences.hidden = !preferences.hidden;
   }
 }, false);

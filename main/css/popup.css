@@ -11,9 +11,10 @@ body {
     grid-template-rows: 20% 20% 60%;
     grid-auto-columns: 15% 70% 15%;
     grid-gap: 5px;
+    animation: resize .3s ease 1 both;
     grid-template-areas:
             "header header header"
-            "inputs inputs preferences"
+            "inputs inputs inputs"
             "outputs outputs outputs";
 }
 
@@ -30,9 +31,6 @@ h1 {
 }
 
 #preferences {
-    grid-area: preferences;
-    grid-column-start: 3;
-    grid-column-end: 4;
     font-size: 14px;
 }
 
@@ -115,3 +113,49 @@ h1 {
     height: 16px;
     filter: invert(1);
 }
+
+@keyframes expand {
+    0% {
+        grid-template-rows: 20% 20% 60%;
+    }
+    
+    25% {
+        grid-template-rows: 21% 20% 59%;
+    }
+    
+    50% {
+        grid-template-rows: 22% 20% 58%;
+    }
+    
+    75% {
+        grid-template-rows: 23% 20% 57%;
+    }
+    
+    100% {
+        grid-template-rows: 25% 20% 55%;
+    }
+}
+
+
+@keyframes collapse {
+    0% {
+        grid-template-rows: 25% 20% 55%;
+    }
+    
+    25% {
+        grid-template-rows: 24% 20% 56%;
+    }
+    
+    50% {
+        grid-template-rows: 23% 20% 57%;
+    }
+    
+    75% {
+        grid-template-rows: 22% 20% 58%;
+    }
+    
+    100% {
+        grid-template-rows: 20% 20% 60%;
+    }
+}
+

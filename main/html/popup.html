@@ -22,6 +22,16 @@
       </div>
     </h1>
     <p>Генератор репортов из CSV файлов</p>
+    <div id="preferences" hidden>
+      <div class="row">
+        <input id="wipStatus" type="checkbox">
+        <label id="wipStatusLabel" for="wipStatus">Include <b>wip</b> status</label>
+      </div>
+      <div class="row">
+        <input id="nextDayPlan" type="checkbox">
+        <label id="nextDayPlanLabel" for="nextDayPlan">Include <b>Jira tasks</b> for the plan</label>
+      </div>
+    </div>
   </div>
   <div id="inputs">
     <div class="row margin-buttons">
@@ -42,16 +52,6 @@
     </div>
     <label for="copyOutput"></label>
     <textarea id="copyOutput" style="opacity: 0"></textarea>
-  </div>
-  <div id="preferences" hidden>
-    <div class="row">
-      <input id="wipStatus" type="checkbox">
-      <label id="wipStatusLabel" for="wipStatus">Include <b>wip</b> status</label>
-    </div>
-    <div class="row">
-      <input id="nextDayPlan" type="checkbox">
-      <label id="nextDayPlanLabel" for="nextDayPlan">Include <b>Jira tasks</b> for the plan</label>
-    </div>
   </div>
   <div id="outputs">
     <p id="output"></p>
