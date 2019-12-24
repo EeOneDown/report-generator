@@ -1,4 +1,4 @@
-import { ISSUE_KEY, ALL_FIELDS, DEFAULT_FIELDS, LANGUAGES, NAMES, SKIP_FILTERS, SUMMARY } from './constants.js';
+import { ISSUE_KEY, ALL_FIELDS, DEFAULT_FIELDS, LANGUAGES, NAMES, SKIP_FILTERS, SUMMARY, IN_PROGRESS_STATUSES, STATUS } from './constants.js';
 
 document.addEventListener('DOMContentLoaded', function() {
   // *** header/body ***
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const now = new Date();
     let parsedTasks = data.map((task) => {
-      text = `${selectedFields.map(field => task[field]).join(' - ')}`;
+      let text = `${selectedFields.map(field => task[field]).join(' - ')}`;
       if (IN_PROGRESS_STATUSES.includes(task[STATUS.name[language]])) text += ' - wip';
       return text;
     });
